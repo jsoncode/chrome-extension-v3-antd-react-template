@@ -1,0 +1,70 @@
+{
+  "name": "Getting Started Example",
+  "description": "Build an Extension!",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "options_page": "index.html",
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "all_frames": true,
+      "js": [
+        "js/content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess",
+    "cookies",
+    "unlimitedStorage",
+    "scripting",
+    "bookmarks",
+    "contextMenus",
+    "notifications",
+    "webNavigation",
+    "clipboardWrite",
+    "declarativeContent",
+    "downloads",
+    "idle",
+    "clipboardRead",
+    "browsingData",
+    "geolocation",
+    "history",
+    "management",
+    "tts",
+    "ttsEngine"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Default Title",
+    "default_popup": "pages/popup/index.html",
+    "default_icon": {
+      "32": "/images/icon400.png",
+      "48": "/images/icon400.png",
+      "128": "/images/icon400.png",
+      "512": "/images/icon400.png"
+    }
+  },
+  "icons": {
+    "32": "/images/icon400.png",
+    "48": "/images/icon400.png",
+    "128": "/images/icon400.png",
+    "512": "/images/icon400.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; script-src-elem 'self' 'unsafe-inline'",
+    "sandbox": "sandbox allow-scripts"
+  }
+}

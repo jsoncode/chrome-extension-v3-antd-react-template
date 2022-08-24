@@ -1,0 +1,53 @@
+:root {
+    --menu-max-width: 200px;
+    --menu-shadow: 2px 0 10px 2px rgba(0, 0, 0, 0.2);
+    --page-header-heading: 1px 0 1px 1px rgba(0, 0, 0, 0.2);
+    --hljs-background: #001529;
+    --scroll-width: 10px;
+    --scroll-height: 10px;
+    --scroll-radius: 5px;
+    --scroll-color: rgba(100, 100, 100, .5);
+    --scroll-background: rgba(100, 100, 100, .1);
+}
+
+html, body, #root, .pageLoading {
+    height: 100%;
+    overflow: hidden;
+}
+
+#root {
+    display: flex;
+}
+
+#root > div {
+    flex: 1;
+    width: 100%;
+}
+
+.hljs {
+    border-radius: 5px;
+    background-color: var(--hljs-background);
+}
+
+::-webkit-scrollbar {
+    width: var(--scroll-width);
+    height: var(--scroll-height);
+    background-color: var(--scroll-background)
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: var(--scroll-radius);
+}
+
+.pageLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*ant reset*/
+.message-error .ant-message-notice-content {
+    background-color: #dc1515;
+    color: #fff;
+}
