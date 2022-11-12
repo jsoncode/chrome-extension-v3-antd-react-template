@@ -42,3 +42,9 @@ yarn start
 4. 选择项目根目录下，刚生成的build目录，点击确定，即可安装成功。
 
    ![第二步](step2.png)
+
+
+### 其他资料
+
+[Ant Design 文档](https://ant.design)
+
