@@ -1,6 +1,9 @@
 # chrome-extension-v3-antd-react-template
 第三版chrome插件开发源码模板。内置react+antd4+ts
 
+Chrome Extensions Version 3.0
+
+> Warning： 因为用的是v3版本的api, 所以Chrome版本必须大于97，否则不兼容。
 
 ### 预览图
 ![预览图](preview.png)
