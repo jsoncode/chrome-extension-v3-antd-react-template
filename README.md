@@ -5,8 +5,11 @@ Chrome Extensions Version 3.0
 
 > Warning： 因为用的是v3版本的api, 所以Chrome版本必须大于97，否则不兼容。
 
+> tips: 开发过程中，可以在浏览器打开http://127.0.0.1:4000/#/Other 直接看到预览效果。
+> 但是，这只是在编写ui阶段。当接入chrome extensions api之后，就无法继续再通过http查看预览效果。
+> 必须进行安装，然后再插件中进行预览。
 ### 预览图
-![预览图](preview.png)
+![预览图](./preview/preview.png)
 
 ### useage
 
@@ -37,12 +40,17 @@ yarn start
 2. 开启开发模式
 3. 加载已解压的扩展插件
 
-   ![第一步](step1.png)
+   ![第一步](./preview/step1.png)
 
 4. 选择项目根目录下，刚生成的build目录，点击确定，即可安装成功。
 
-   ![第二步](step2.png)
+   ![第二步](./preview/step2.png)
 
+5. 就可以在地址栏右侧看到安装好的插件，点击这里，就可以进入预览效果了。
+
+   ![第三步](./preview/step3.png)
+
+![预览图](./preview/preview.png)
 
 ### 其他资料
 
