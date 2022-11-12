@@ -48,3 +48,8 @@ yarn start
 
 [Ant Design 文档](https://ant.design)
 
+[Chrome插件开发英文文档V3](https://developer.chrome.com/docs/extensions/mv3/)
+
+[Chrome插件开发中文文档V3](https://doc.yilijishu.info/chrome/)
+
+
