@@ -1,17 +1,30 @@
 # chrome-extension-v3-antd-react-template
-第三版chrome插件开发源码模板。内置react+antd4+ts
 
-Chrome Extensions Version 3.0
+### Chrome Extensions Version 3.0 
+
+谷歌浏览器插件第三版API开发 源码模板。
+
+使用了最新的工程化开发流程：
+
+### 技术选型：
+```text
+React 18
+React Router V6
+AntDesign 4
+TypeScript
+Chrome Extensions V3
+```
 
 > Warning： 因为用的是v3版本的api, 所以Chrome版本必须大于97，否则不兼容。
 
 > tips: 开发过程中，可以在浏览器打开http://127.0.0.1:4000/#/Other 直接看到预览效果。
 > 但是，这只是在编写ui阶段。当接入chrome extensions api之后，就无法继续再通过http查看预览效果。
 > 必须进行安装，然后再插件中进行预览。
+
 ### 预览图
 ![预览图](./preview/preview.png)
 
-### useage
+### 使用方法
 
 1. 克隆项目：
 ```shell
@@ -29,14 +42,17 @@ cd chrome-extension-v3-antd-react-template
 yarn install
 ```
 
-4. 启动开发模式
+4. 启动开发模式（会在根目录生成一个/build目录）
 ```shell
 yarn start
 ```
 
-正式发布或打包插件时：使用yarn build ,然后使用build目录进行封装打包。
+### 编译和安装插件
 
-### 安装插件
+发布编译：会在根目录生成一个/build目录。
+```shell
+yarn build
+```
 
 1. 打开浏览器插件管理页面
 2. 开启开发模式
