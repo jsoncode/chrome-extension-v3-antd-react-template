@@ -2,6 +2,7 @@ import React from 'react'
 import {RouteObject, Navigate} from 'react-router-dom';
 import PageContainer from "@/pages";
 import Helper from '@/pages/Helper';
+import Other from '@/pages/Other';
 
 // 主路由
 export const routeList: RouteObject[] = [
@@ -15,6 +16,9 @@ export const routeList: RouteObject[] = [
             },
             {
                 path: 'Helper', element: <Helper/>,
+            },
+            {
+                path: 'Other', element: <Other/>,
             },
             // 404页面
             // {
