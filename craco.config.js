@@ -51,6 +51,7 @@ module.exports = {
     },
     devServer: {
         host: '127.0.0.1', // 默认0.0.0.0，但是默认值在插件中访问不到。
+        port: 4000,
         proxy: {
             '/api': {
                 target: 'https://api.cn',
