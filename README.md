@@ -34,6 +34,8 @@ yarn install
 yarn start
 ```
 
+正式发布或打包插件时：使用yarn build ,然后使用build目录进行封装打包。
+
 ### 安装插件
 
 1. 打开浏览器插件管理页面
