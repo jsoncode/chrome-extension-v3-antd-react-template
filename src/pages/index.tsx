@@ -142,7 +142,7 @@ const Index = () => {
     );
 
     return <div className={styles.page}>
-        <div className={styles.menuWrap}>
+        <div className={`${styles.menuWrap} ${collapsed?styles.collapsed:''}`}>
             <div className={styles.logo}>
                 Logo
             </div>

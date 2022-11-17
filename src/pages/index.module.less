@@ -10,6 +10,11 @@
     box-shadow: var(--menu-shadow);
     z-index: 1;
     flex-shrink: 0;
+    transition-duration: .3s;
+
+    &.collapsed {
+      max-width: 80px;
+    }
 
     .logo {
       flex-shrink: 0;
