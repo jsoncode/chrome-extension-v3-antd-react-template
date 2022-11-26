@@ -1,17 +1,9 @@
 import React, {FC} from 'react';
-import styles from './index.module.less'
 import Container from '@/components/Container'
-import {Input} from 'antd';
 
 const Index: FC = () => {
     return <Container>
-        <h1>
-            其他页面
-        </h1>
-        <div>
-            测试一个antd组件的显示：
-        </div>
-        <Input placeholder="请输入内容"/>
+        <a href="https://github.com/jsoncode/chrome-extension-v3-antd-react-template/blob/main/README.md" target={'_blank'}>安装教程</a>
     </Container>
 }
 
