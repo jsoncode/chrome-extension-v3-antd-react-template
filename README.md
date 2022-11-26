@@ -10,7 +10,7 @@
 ```text
 React 18
 React Router V6
-AntDesign 4
+AntDesign 5
 TypeScript
 Chrome Extensions V3
 ```
