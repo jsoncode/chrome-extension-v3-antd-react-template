@@ -1,21 +1,20 @@
 const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CracoLessPlugin = require('craco-less')
+const { theme } = require('antd/lib');
+const { convertLegacyToken } = require('@ant-design/compatible/lib');
+
+const { defaultAlgorithm, defaultSeed } = theme;
+
+const mapToken = defaultAlgorithm(defaultSeed);
+const v4Token = convertLegacyToken(mapToken);
+
 module.exports = {
-    babel: {
-        plugins: [[
-            'import', {
-                libraryName: 'antd',
-                libraryDirectory: 'es',
-                style: true
-            }
-        ]],
-    },
     webpack: {
         alias: {
             '@': path.resolve('./src'),
         },
-        configure(webpackConfig, {env, paths}) {
+        configure(webpackConfig) {
             let newConfig = {
                 ...webpackConfig,
                 // 关闭source-map
@@ -69,15 +68,14 @@ module.exports = {
             writeToDisk: true,
         },
     },
+
     plugins: [
         {
             plugin: CracoLessPlugin,
             options: {
                 lessLoaderOptions: {
                     lessOptions: {
-                        modifyVars: {
-                            // '@primary-color': 'red'
-                        },
+                        modifyVars: v4Token,
                         javascriptEnabled: true,
                     },
                 }

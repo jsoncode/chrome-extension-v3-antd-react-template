@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon, {QuestionCircleOutlined, SettingOutlined, ToolOutlined} from "@ant-design/icons";
+import Icon, {QuestionCircleOutlined, SettingOutlined} from "@ant-design/icons";
 import {MenuProps} from "antd";
 import {Link} from "react-router-dom";
 import {ReactComponent as AntSvg} from '@/assets/ant.svg'

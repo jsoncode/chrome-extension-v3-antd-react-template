@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet, useLocation, useNavigate} from 'react-router-dom';
-import {Button, Dropdown, Menu, PageHeader} from 'antd';
+import {Button, Dropdown, Menu} from 'antd';
+import { PageHeader } from '@ant-design/pro-layout';
 import {MenuFoldOutlined, MenuUnfoldOutlined, MoreOutlined} from '@ant-design/icons';
 import menuList, {menuMap, openMultipleMenu, openMultipleSubMenu} from '@/pages/MenuList'
 import styles from './index.module.less'
@@ -125,7 +126,7 @@ const Index = () => {
         setOpenKeys(findMenuByPath(name))
     }, [pathname])
 
-    const menu = (
+    const menu: any = (
         <Menu
             style={{minWidth: 100}}
             items={[
