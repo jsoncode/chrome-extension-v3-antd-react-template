@@ -1,9 +1,9 @@
 import React from 'react'
 import {RouteObject, Navigate} from 'react-router-dom';
 import PageContainer from "@/pages";
-import Helper from '@/pages/Helper';
-import Other from '@/pages/Other';
+import RouteList from '@/router/List'
 
+const list: any = getRouteList(RouteList)
 // 主路由
 export const routeList: RouteObject[] = [
     {
@@ -12,14 +12,9 @@ export const routeList: RouteObject[] = [
         children: [
             // 首页
             {
-                index: true, element: <Navigate to="/Helper"/>,
+                index: true, element: <Navigate to="/Weibo"/>,
             },
-            {
-                path: 'Helper', element: <Helper/>,
-            },
-            {
-                path: 'Other', element: <Other/>,
-            },
+            ...list,
             // 404页面
             // {
             //     path: '*', element: <Navigate to="/Installed"/>,
@@ -27,3 +22,23 @@ export const routeList: RouteObject[] = [
         ]
     },
 ];
+
+function getRouteList(routes: any) {
+    let newList: any = []
+    loop(routes)
+    return newList
+
+    function loop(list: any) {
+        list.forEach((item: any) => {
+            if (item.element) {
+                newList.push({
+                    path: item.route.replace(/^\//, ''),
+                    element: item.element,
+                })
+            } else {
+                loop(item.children)
+            }
+        })
+    }
+
+}

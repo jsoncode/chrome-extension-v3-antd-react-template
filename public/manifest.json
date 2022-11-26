@@ -5,7 +5,8 @@
   "manifest_version": 3,
   "options_page": "index.html",
   "background": {
-    "service_worker": "js/background.js"
+    "service_worker": "js/background.js",
+    "persitent": true
   },
   "content_scripts": [
     {

@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {Outlet, useLocation, useNavigate} from 'react-router-dom';
-import {Button, Dropdown, Menu} from 'antd';
-import { PageHeader } from '@ant-design/pro-layout';
+import {Button, Dropdown, Menu, Modal} from 'antd';
+import {PageHeader} from '@ant-design/pro-layout';
 import {MenuFoldOutlined, MenuUnfoldOutlined, MoreOutlined} from '@ant-design/icons';
 import menuList, {menuMap, openMultipleMenu, openMultipleSubMenu} from '@/pages/MenuList'
 import styles from './index.module.less'
+import {MarsMap} from '@/const/mars';
 
 const Index = () => {
     const navigate = useNavigate()
@@ -118,6 +119,21 @@ const Index = () => {
         }
     }
 
+    async function initStorage() {
+        let storage = await chrome.storage.local.get('installed')
+        if (!storage.installed) {
+            Modal.success({
+                title:'安装成功',
+                content: '开始探索新功能吧🥰🥰🥰',
+                okText:'好的',
+            });
+        }
+        await chrome.storage.local.set({
+            marsMap: {...MarsMap},
+            installed: true
+        })
+    }
+
 
     // 根据路由变化,动态展开菜单和选中菜单
     useEffect(() => {
@@ -125,6 +141,21 @@ const Index = () => {
         setMenuItem(menuMap[name])
         setOpenKeys(findMenuByPath(name))
     }, [pathname])
+
+    useEffect(() => {
+        initStorage()
+        // 可以接受来自content.js、background.js的消息
+        // if (chrome?.runtime?.onMessage?.addListener) {
+        //     console.log(chrome?.runtime?.onMessage)
+        //     chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        //         if (message.name === "WeiboInputValue") {
+        //             console.log('收到消息：', message)
+        //             const result = translateHuoxing(message.value);
+        //             sendResponse(result)
+        //         }
+        //     })
+        // }
+    }, [])
 
     const menu: any = (
         <Menu
@@ -143,7 +174,7 @@ const Index = () => {
     );
 
     return <div className={styles.page}>
-        <div className={`${styles.menuWrap} ${collapsed?styles.collapsed:''}`}>
+        <div className={`${styles.menuWrap} ${collapsed ? styles.collapsed : ''}`}>
             <div className={styles.logo}>
                 Logo
             </div>

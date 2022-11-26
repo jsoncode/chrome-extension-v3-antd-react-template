@@ -16,7 +16,7 @@
     "typescript": "^4.9.3"
   },
   "scripts": {
-    "start": "cross-env INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false craco start",
+    "start": "cross-env INLINE_RUNTIME_CHUNK=false craco start",
     "build": "cross-env INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false craco build"
   },
   "eslintConfig": {

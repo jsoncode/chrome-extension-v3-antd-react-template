@@ -1,0 +1,39 @@
+.row {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-grow: 1;
+
+  .col {
+    flex-grow: 3;
+    flex-shrink: 0;
+    width: 0;
+    display: flex;
+    align-items: stretch;
+
+    &:nth-child(2) {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      :global {
+        .ant-btn {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  :global {
+    textarea {
+      font-size: 18px;
+    }
+  }
+}
