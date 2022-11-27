@@ -35,3 +35,4 @@ function translateHuoxing(txt) {
 chrome.runtime.onInstalled.addListener(async function () {
     chrome.tabs.create({url: '/index.html'});
 });
+console.log(11)

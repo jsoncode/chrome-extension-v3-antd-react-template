@@ -17,10 +17,6 @@ Chrome Extensions V3
 
 > Warning： 因为用的是v3版本的api, 所以Chrome版本必须大于97，否则不兼容。
 
-> tips: 开发过程中，可以在浏览器打开http://127.0.0.1:4000/#/Other 直接看到预览效果。
-> 但是，这只是在编写ui阶段。当接入chrome extensions api之后，就无法继续再通过http查看预览效果。
-> 必须进行安装，然后再插件中进行预览。
-
 ### 预览图
 ![预览图](./preview/preview.png)
 
