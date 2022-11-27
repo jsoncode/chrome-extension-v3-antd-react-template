@@ -1,5 +1,5 @@
 :root {
-    --menu-max-width: 200px;
+    --menu-max-width: 300px;
     --menu-shadow: 2px 0 10px 2px rgba(0, 0, 0, 0.2);
     --page-header-heading: 1px 0 1px 1px rgba(0, 0, 0, 0.2);
     --hljs-background: #001529;

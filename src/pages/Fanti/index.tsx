@@ -73,7 +73,7 @@ const Index: FC = () => {
                     onChange={onChangeNew}
                     value={newTxt}
                     rows={30}
-                    placeholder={'这里将生成火星文字'}
+                    placeholder={'这里将生成繁体内容'}
                 />
             </div>
         </div>

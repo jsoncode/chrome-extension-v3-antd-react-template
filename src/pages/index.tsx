@@ -157,26 +157,26 @@ const Index = () => {
         // }
     }, [])
 
-    const menu: any = (
-        <Menu
-            style={{minWidth: 100}}
-            items={[
-                {
-                    key: '1',
-                    label: 'menu1',
-                },
-                {
-                    key: '2',
-                    label: 'menu2',
-                },
-            ]}
-        />
-    );
+    // const menu: any = (
+    //     <Menu
+    //         style={{minWidth: 100}}
+    //         items={[
+    //             {
+    //                 key: '1',
+    //                 label: 'menu1',
+    //             },
+    //             {
+    //                 key: '2',
+    //                 label: 'menu2',
+    //             },
+    //         ]}
+    //     />
+    // );
 
     return <div className={styles.page}>
         <div className={`${styles.menuWrap} ${collapsed ? styles.collapsed : ''}`}>
             <div className={styles.logo}>
-                Logo
+                大V工具箱
             </div>
             <Menu
                 mode="inline"
@@ -197,11 +197,11 @@ const Index = () => {
                     setCollapsed(!collapsed)
                 }}
                 backIcon={collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
-                extra={[
+                /*extra={[
                     <Dropdown key="more" overlay={menu} placement="bottomRight">
                         <Button type="text" icon={<MoreOutlined style={{fontSize: 20}}/>}/>
                     </Dropdown>
-                ]}
+                ]}*/
             >
                 <Outlet/>
             </PageHeader>

@@ -9,14 +9,14 @@ import {ReactComponent as FanSvg} from '@/assets/fan.svg'
 const list = [
     {
         label: '火星文微博',
-        icon: <WeiboOutlined style={{color: '#ff8200', fontSize: 20}}/>,
+        icon: <WeiboOutlined style={{color: '#f50'}}/>,
         route: '/Weibo',
         element: <WeiBo/>
     },
     {
         label: '火星文翻译机',
         // 使用svg图标
-        icon: <FireOutlined style={{color: 'red', fontSize: 20}}/>,
+        icon: <FireOutlined style={{color: '#f50'}}/>,
         // 使用svg图片
         // icon: <Icon component={<FireOutlined/>}/>,
         route: '/Huoxing',
@@ -24,7 +24,7 @@ const list = [
     },
     {
         label: '繁简转换',
-        icon: <Icon component={FanSvg} style={{fontSize: 20}}/>,
+        icon: <Icon component={FanSvg}/>,
         route: '/Fanti',
         element: <Fanti/>
     },
