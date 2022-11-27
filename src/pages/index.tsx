@@ -198,7 +198,7 @@ const Index = () => {
                 }}
                 backIcon={collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
                 extra={[
-                    <Dropdown key="more" menu={menu} placement="bottomRight">
+                    <Dropdown key="more" overlay={menu} placement="bottomRight">
                         <Button type="text" icon={<MoreOutlined style={{fontSize: 20}}/>}/>
                     </Dropdown>
                 ]}
