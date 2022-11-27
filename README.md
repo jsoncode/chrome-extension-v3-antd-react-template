@@ -40,7 +40,7 @@ yarn install
 
 4. 启动开发模式（会在根目录生成一个/build目录）
 ```shell
-yarn start
+yarn dev
 ```
 
 ### 编译和安装插件
