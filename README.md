@@ -40,14 +40,14 @@ yarn install
 
 4. 启动开发模式（会在根目录生成一个/build目录）
 ```shell
-yarn dev
+yarn devAndWatchPublic
 ```
 
 ### 编译和安装插件
 
-发布编译：会在根目录生成一个/build目录。
+发布编译：会在根目录生成一个/build目录和一个build.zip
 ```shell
-yarn build
+yarn buildAndPack
 ```
 
 1. 打开浏览器插件管理页面
