@@ -33,6 +33,9 @@ function translateHuoxing(txt) {
 
 // 第一次安装后，打开一下popup页面，以完成缓存的初始化
 chrome.runtime.onInstalled.addListener(async function () {
-    chrome.tabs.create({url: '/index.html'});
+    let storage = await chrome.storage.local.get('marsMap')
+    // 如果不是第一次安装，而是刷新的情况，就不再打开页面
+    if (!storage.marsMap) {
+        chrome.tabs.create({url: '/index.html'});
+    }
 });
-console.log(11)
