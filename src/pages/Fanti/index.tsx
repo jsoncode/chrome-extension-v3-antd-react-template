@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react';
 import Container from '@/components/Container'
 import {Button, Input, message} from 'antd';
-import {LoginOutlined} from '@ant-design/icons'
+import {ArrowRightOutlined, ArrowLeftOutlined} from '@ant-design/icons'
 import {translateFanti, translateJianti} from "@/utils";
 import styles from './index.module.less'
 
@@ -50,7 +50,7 @@ const Index: FC = () => {
                 <Button
                     size={'large'}
                     type="primary"
-                    icon={<LoginOutlined/>}
+                    icon={<ArrowRightOutlined/>}
                     onClick={() => {
                         translateFan()
                     }}
@@ -60,7 +60,7 @@ const Index: FC = () => {
                 <Button
                     size={'large'}
                     type="primary"
-                    icon={<LoginOutlined/>}
+                    icon={<ArrowLeftOutlined/>}
                     onClick={() => {
                         translateJian()
                     }}
