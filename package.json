@@ -16,10 +16,12 @@
     "typescript": "^4.9.3"
   },
   "scripts": {
-    "dev": "concurrently \"yarn watchPublicDir\" \"yarn start\"",
+    "devAndWatchPublic": "concurrently \"yarn watchPublicDir\" \"yarn start\"",
+    "buildAndPack": "concurrently \"yarn build\" \"yarn zipPack\"",
     "start": "cross-env INLINE_RUNTIME_CHUNK=false craco start",
     "build": "cross-env INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false craco build",
-    "watchPublicDir": "node watch_public.mjs"
+    "watchPublicDir": "node watch_public.mjs",
+    "zipPack": "node zipPackl.mjs"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +43,7 @@
   "devDependencies": {
     "@craco/craco": "^7.0.0",
     "@types/chrome": "^0.0.203",
+    "adm-zip": "^0.5.9",
     "concurrently": "^7.6.0",
     "craco-less": "^2.0.0",
     "cross-env": "^7.0.3"

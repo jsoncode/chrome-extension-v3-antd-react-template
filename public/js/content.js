@@ -4,14 +4,21 @@ runWeibo()
 
 async function runWeibo() {
     if (window.location.host === 'weibo.com') {
+        // getFans({
+        //     page:1,
+        //     uid: '',
+        // })
         const SwitchOpenStorage = await chrome.storage.local.get(getHuoxingKey('SwitchOpen'))
         const SwitchOpen = SwitchOpenStorage[getHuoxingKey('SwitchOpen')]
         if (!SwitchOpen) {
             return
         }
         let input = document.querySelector('textarea[class*="Form_input"]');
-        let el = input?.closest('.wbpro-form[class*="Form_wbproform"]').parentElement
+        let el = input?.closest('.wbpro-form[class*="Form_wbproform"]')?.parentElement
         let submitBtn = document.querySelector('[class*="Tool_btn"]')
+        if (!input) {
+            return
+        }
         input.addEventListener('keyup', async () => {
             // 记录状态，以区分翻译后的输入还说用户自己输入
             await chrome.storage.local.set({
@@ -90,4 +97,23 @@ function inputValue(el, value) {
 
 function getHuoxingKey(name) {
     return huoxingKey + (name || '')
+}
+
+function getFans(params) {
+    let data = [
+        'relate=fans',
+        'type=all',
+        'newFollowerCount=0',
+    ];
+    for (let key in params) {
+        // page=1
+        // uid=xxx
+        data.push(`${key}=${params[key]}`)
+    }
+    return fetch('https://weibo.com/ajax/friendships/friends?' + data.join('&'))
+        .then(res => res.json())
+        .then(res => {
+            // const {display_total_number: display_tatal, total_number: real_total, users: list} = res
+            return res
+        })
 }
