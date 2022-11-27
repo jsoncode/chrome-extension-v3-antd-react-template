@@ -8,6 +8,23 @@
     "service_worker": "js/background.js",
     "persitent": true
   },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "js/page-script.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "declarative_net_request" : {
+    "rule_resources" : [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "json/rules_1.json"
+    }]
+  },
   "content_scripts": [
     {
       "matches": [
