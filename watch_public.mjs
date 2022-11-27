@@ -6,17 +6,19 @@ import path from 'path'
  */
 const publicDir = path.resolve('./public')
 const build = path.resolve('./build')
-
+mkdir(build)
 const fileList = deepGetFile(publicDir)
 
 for (let item of fileList) {
-    fs.copyFileSync(item, item.replace(publicDir, build))
+    let toPath = item.replace(publicDir, build)
+    mkdir(toPath)
+    fs.copyFileSync(item, toPath)
 
     fs.watchFile(item, {
         persistent: true, // 监控之后是否继续进程，默认false
         interval: 1000, // 监听频率，毫秒
     }, () => {
-        fs.copyFileSync(item, item.replace(publicDir, build))
+        fs.copyFileSync(item, toPath)
         console.log('public文件复制成功')
     })
 }
@@ -35,4 +37,23 @@ function deepGetFile(dir) {
         }
     }
     return backList
+}
+
+function mkdir(dir) {
+    let dirList = dir.split(/[\\\/]+/)
+    dirList.pop()
+
+    let pathStr = ''
+    for (let index in dirList) {
+        let item = dirList[index]
+        if (index === '0') {
+            pathStr = item
+        } else {
+            pathStr += '/' + item
+        }
+
+        if (!fs.existsSync(pathStr)) {
+            fs.mkdirSync(pathStr)
+        }
+    }
 }
