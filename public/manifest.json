@@ -18,21 +18,22 @@
       ]
     }
   ],
-  "declarative_net_request" : {
-    "rule_resources" : [{
-      "id": "ruleset_1",
-      "enabled": true,
-      "path": "json/rules_1.json"
-    }]
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "json/rules_1.json"
+      }
+    ]
   },
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "https://weibo.com/**"
       ],
-      "all_frames": true,
       "js": [
-        "js/content.js"
+        "js/content/weibo.js"
       ]
     }
   ],
