@@ -1,4 +1,5 @@
 document.addEventListener('message', (event) => {
-    eval(event.detail);
+    // eval(event.detail);
+    console.log(event)
 });
 
