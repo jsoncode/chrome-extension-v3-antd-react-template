@@ -28,7 +28,6 @@ const Index: FC = () => {
             labelCol={{span: 4}}
             wrapperCol={{span: 16}}
             autoComplete="off"
-            size={'large'}
         >
             <Form.Item
                 label="开启火星文微博翻译"
