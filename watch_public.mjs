@@ -40,19 +40,18 @@ function deepGetFile(dir) {
 }
 
 function mkdir(dir) {
-    let dirList = dir.split(/[\\\/]+/)
+    let dirList = dir.replace(/^\//, '').split(/[\\\/]+/)
     dirList.pop()
-
     let pathStr = ''
     for (let index in dirList) {
         let item = dirList[index]
         if (index === '0') {
-            pathStr = item
+            pathStr = '/' + item
         } else {
             pathStr += '/' + item
         }
 
-        if (!fs.existsSync(pathStr)) {
+        if (pathStr && !fs.existsSync(pathStr)) {
             fs.mkdirSync(pathStr)
         }
     }
